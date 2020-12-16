@@ -91,7 +91,11 @@ function getname($title){return explode("#", $title)[0];}
 function gtdate($title){return explode("#", $title)[1];}
 
 function sortFunction( $a, $b ) {
-if($a=="." || $a==".." || $b=="." || $b==".."){return 0;}
+    
+if($a=="." || $a==".."){return -1;}
+if($b=="." || $b==".."){return  1;}
+    
+    
 
     return (strtotime(gtdate($a)) - strtotime(gtdate($b)))   ;
 }
